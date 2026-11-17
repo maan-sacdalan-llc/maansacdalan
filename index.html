@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maan Sacdalan | Nonprofit Strategist, Designer and Technologist</title>
+<meta name="description" content="Maan Sacdalan helps nonprofits, agencies and companies raise more and reach more people through web design, fundraising technology, email and print. Co-founder of Arbcentrix and Stratovation Partners.">
+<meta property="og:title" content="Maan Sacdalan | Nonprofit Strategist, Designer and Technologist">
+<meta property="og:description" content="Web design, fundraising technology, email and print for mission-driven organizations since 2002.">
+<meta property="og:image" content="https://maansacdalan.com/images/maan-sacdalan.jpg">
+<meta property="og:url" content="https://maansacdalan.com/">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--gold:#85652A;--tint:#EFE6D3;--ink:#1F1D1B;--body:#3D3A36;--muted:#5E5A55;--soft:#75706A;--line:#E4DFD8;--bg:#F8F5EF;--serif:'Cormorant Garamond',Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+a{color:var(--ink)}a:hover{color:#000}
+img{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding-left:32px;padding-right:32px}
+.serif{font-family:var(--serif)}
+.eyebrow{margin:0;font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.muted{color:var(--muted)}.soft{color:var(--soft)}
+
+/* nav */
+header{border-bottom:1px solid var(--line)}
+nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:24px}
+.brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none}
+.links{display:flex;flex-wrap:wrap;align-items:center;gap:32px;font-size:15px}
+.links a{color:var(--muted);text-decoration:none}
+.links a.cta{color:var(--gold);font-weight:600}
+.links a.icon{display:inline-flex;align-items:center}
+@media (max-width:720px){.links .nl{display:none}}
+
+/* hero */
+.hero{max-width:860px;margin:0 auto;padding:clamp(48px,8vw,88px) 24px clamp(56px,8vw,96px);text-align:center;display:flex;flex-direction:column;align-items:center}
+.portrait{position:relative;width:200px;aspect-ratio:7/8;margin-bottom:44px}
+.portrait .blob{position:absolute;inset:12px -12px -12px 12px;background:var(--tint);border-radius:62% 38% 46% 54%/48% 56% 44% 52%}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;border-radius:48% 52% 40% 60%/55% 45% 55% 45%}
+.hero h1{margin:18px 0 24px;font-family:var(--serif);font-weight:600;font-size:clamp(36px,4vw + 20px,56px);line-height:1.1;letter-spacing:-.025em}
+.hero p.lead{margin:0 0 36px;font-size:18px;color:var(--muted);max-width:640px}
+.hero .actions{display:flex;flex-wrap:wrap;justify-content:center;gap:28px;font-weight:600}
+.hero .actions a{text-decoration:none;padding-bottom:3px;border-bottom:2px solid #D6D0C7}
+.hero .actions a.primary{border-bottom-color:var(--gold)}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.role{padding:32px 28px 32px 0}
+.role .logo{height:104px;display:flex;align-items:center;margin-bottom:20px}
+.role .meta{margin:0 0 8px;font-size:13px;color:var(--soft)}
+.role h2{margin:0 0 6px;font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.3}
+.role p.title{margin:0;color:var(--muted);font-size:15px}
+
+/* sections */
+section.block{padding-top:112px}
+.split{display:flex;flex-wrap:wrap;gap:48px;border-top:1px solid var(--line);padding-top:48px}
+.split > .eyebrow{flex:1 1 200px}
+.split > .content{flex:999 1 560px;min-width:0}
+h2.title{margin:0;font-family:var(--serif);font-size:clamp(30px,2vw + 14px,38px);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+
+/* work */
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:40px}
+.work-head p{margin:0;color:var(--soft);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 32px}
+figure{margin:0}
+figure img{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--tint);padding:18px;border-radius:6px;border:1px solid var(--line)}
+figcaption{padding-top:14px}
+figcaption strong{font-family:var(--serif);font-weight:700;font-size:18px}
+figcaption span{color:var(--soft);font-size:14px}
+
+/* about */
+.about-text{font-size:17px;color:var(--body)}
+.about-text p{margin:0 0 18px}.about-text p:last-child{margin:0}
+
+/* expertise, companies */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 40px}
+.cols h3{margin:0 0 6px;font-family:var(--serif);font-size:20px;font-weight:700}
+.cols p{margin:0;color:var(--muted);font-size:15px}
+.company .clogo{height:76px;display:flex;align-items:center;margin-bottom:18px}
+.company h3{font-size:24px;margin-bottom:8px}
+.company p{font-size:16px;margin-bottom:14px}
+.company a{color:var(--gold);font-weight:600;text-decoration:none}
+
+/* clients */
+.pills{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.pills li{border:1px solid #D9D2C7;border-radius:999px;padding:9px 18px;font-size:15px;color:var(--body);background:#fff}
+
+/* speaking */
+.intro{margin:0 0 32px;font-family:var(--serif);font-size:24px;line-height:1.4;color:var(--body)}
+.talks{border-top:1px solid var(--line)}
+.talk{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.talk h3{margin:0 0 2px;font-family:var(--serif);font-size:22px;font-weight:700}
+.talk p{margin:0;font-size:14px;color:var(--soft)}
+.talk .years{font-size:15px;color:var(--muted)}
+.more{display:flex;flex-wrap:wrap;gap:28px;margin-top:24px;font-weight:600;font-size:15px}
+.more a{text-decoration:none}.more a.gold{color:var(--gold)}
+
+/* other */
+.other p.kind{margin:0 0 4px;font-size:13px;color:var(--soft)}
+.other h3{margin:0 0 6px;font-family:var(--serif);font-size:22px;font-weight:700}
+.other p.desc{margin:0;color:var(--muted);font-size:16px}
+
+/* contact */
+#contact{padding:clamp(80px,10vw,128px) 24px clamp(64px,9vw,120px)}
+.contact-box{background:var(--tint);border-radius:12px;padding:clamp(32px,6vw,64px) clamp(24px,5vw,48px);display:flex;flex-wrap:wrap;gap:48px}
+.contact-box > div{flex:1 1 300px}
+.contact-box h2{margin:0 0 14px;font-family:var(--serif);font-size:clamp(30px,2vw + 14px,38px);font-weight:600;line-height:1.2;letter-spacing:-.02em}
+.contact-box p{margin:0 0 24px;color:var(--body);font-size:16px}
+.contact-links{display:flex;flex-wrap:wrap;gap:20px;font-weight:600;font-size:15px}
+.contact-links a{color:var(--gold);text-decoration:none}
+form{flex:999 1 400px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.row{display:flex;flex-wrap:wrap;gap:20px}
+label{flex:1 1 180px;display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:500;color:var(--body)}
+input,textarea{font:inherit;font-size:16px;padding:10px 0;border:0;border-bottom:1px solid #9C958C;background:transparent;color:var(--ink);border-radius:0}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--gold)}
+textarea{resize:vertical}
+button{align-self:flex-start;font:inherit;font-weight:600;font-size:15px;background:#2A211B;color:#fff;border:0;border-radius:999px;padding:13px 26px;cursor:pointer}
+button:hover{background:#000}
+.hidden{display:none}
+
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:28px;font-size:13px;color:var(--soft)}
+footer a{color:var(--soft);text-decoration:none}footer a:hover{color:var(--ink)}
+@media (max-width:600px){.wrap{padding-left:24px;padding-right:24px}}
+</style>
+</head>
+<body>
+
+<header>
+<nav class="wrap" aria-label="Main">
+<a href="#top" class="brand">Maan Sacdalan</a>
+<div class="links">
+<a href="#work" class="nl">Work</a>
+<a href="#about" class="nl">About</a>
+<a href="#companies" class="nl">Companies</a>
+<a href="#expertise" class="nl">Expertise</a>
+<a href="#speaking" class="nl">Speaking</a>
+<a href="#contact" class="cta">Contact</a>
+<a href="https://www.linkedin.com/in/maansacdalan/" class="icon" aria-label="Maan Sacdalan on LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="10" x2="8" y2="16.5"/><circle cx="8" cy="7.2" r="0.6"/><path d="M12 16.5V10.5M12 13.2c0-1.6 1-2.7 2.4-2.7s2.1 1 2.1 2.7v3.3"/></svg></a>
+</div>
+</nav>
+</header>
+
+<main>
+<section id="top" class="hero">
+<div class="portrait"><div class="blob" aria-hidden="true"></div><img src="images/maan-sacdalan.jpg" alt="Maan Sacdalan"></div>
+<p class="eyebrow">Digital Designer since 2002 · Washington, DC</p>
+<h1>I build the digital engines that help mission-driven organizations grow.</h1>
+<p class="lead">Since 2002 I have helped nonprofits, agencies and companies across the U.S. and Canada raise more, reach more people and look their best, through web design and development, fundraising technology, email and print. Along the way I co-founded two firms of my own.</p>
+<div class="actions"><a href="#work" class="primary">See my work</a><a href="#contact">Get in touch</a></div>
+</section>
+
+<section aria-label="Roles" class="wrap">
+<div class="roles">
+<div class="role">
+<div class="logo"><img src="images/logo-maan-sacdalan.png" alt="Maan Sacdalan Digital Designs logo" style="height:104px;width:auto"></div>
+<p class="meta">Since 2002</p>
+<h2>Maan Sacdalan Digital Designs</h2>
+<p class="title">Nonprofit Strategist, Designer and Technologist</p>
+</div>
+<div class="role">
+<div class="logo"><img src="images/logo-arbcentrix.png" alt="Arbcentrix logo" style="height:92px;width:auto"></div>
+<p class="meta">Co-Founder</p>
+<h2>Arbcentrix Inc.</h2>
+<p class="title">Chief Marketing and Technology Officer</p>
+</div>
+<div class="role">
+<div class="logo"><img src="images/logo-stratovation.png" alt="Stratovation Partners logo" style="height:58px;width:auto"></div>
+<p class="meta">Co-Founder</p>
+<h2>Stratovation Partners</h2>
+<p class="title">Partner and Chief Operating Officer</p>
+</div>
+</div>
+</section>
+
+<section id="work" class="wrap block">
+<div class="work-head"><h2 class="title">Selected work</h2><p>Websites, campaigns and print</p></div>
+<div class="grid">
+<figure><img src="images/work-andy-suth.jpg" alt="Andy Suth, Ph.D. and Associates website" loading="lazy"><figcaption><strong>Andy Suth, Ph.D. and Associates</strong><br><span>Website design, clinical psychology practice</span></figcaption></figure>
+<figure><img src="images/work-franciscan-relief.jpg" alt="Franciscan Relief Fund donation page" loading="lazy"><figcaption><strong>Franciscan Relief Fund</strong><br><span>Donation page on Engaging Networks</span></figcaption></figure>
+<figure><img src="images/work-milb.jpg" alt="Minor League Baseball advocacy website" loading="lazy"><figcaption><strong>Minor League Baseball</strong><br><span>Advocacy campaign website</span></figcaption></figure>
+<figure><img src="images/work-uli-report.jpg" alt="ULI Foundation annual report" loading="lazy"><figcaption><strong>ULI Foundation</strong><br><span>Annual report</span></figcaption></figure>
+<figure><img src="images/work-liver-canada.jpg" alt="Liver Canada donation page" loading="lazy"><figcaption><strong>Liver Canada</strong><br><span>Donation page</span></figcaption></figure>
+<figure><img src="images/work-techrise.jpg" alt="TechRise website" loading="lazy"><figcaption><strong>TechRise</strong><br><span>Website design</span></figcaption></figure>
+<figure><img src="images/work-real-meals.jpg" alt="Real Meals Campaign website on a phone" loading="lazy"><figcaption><strong>Real Meals Campaign</strong><br><span>Campaign website</span></figcaption></figure>
+<figure><img src="images/work-griffin-way.jpg" alt="The Griffin Way business cards" loading="lazy"><figcaption><strong>The Griffin Way</strong><br><span>Brand identity and business cards</span></figcaption></figure>
+<figure><img src="images/work-aaaj.jpg" alt="Asian Americans Advancing Justice website" loading="lazy"><figcaption><strong>Asian Americans Advancing Justice</strong><br><span>Website design</span></figcaption></figure>
+</div>
+</section>
+
+<section id="about" class="wrap block" style="padding-top:128px">
+<div class="split">
+<p class="eyebrow">About</p>
+<div class="content">
+<h2 class="title" style="margin-bottom:24px">Part strategist, part designer, all in on the mission.</h2>
+<div class="about-text">
+<p>I'm Maan Sacdalan, a Washington, DC based technologist who has spent two decades at the place where design, data and fundraising meet. I started out as a web and graphic designer, grew into front-end development, and went deep on the CRM platforms that power nonprofit fundraising and advocacy.</p>
+<p>Over more than 20 years of freelancing for nonprofits, agencies, schools, campaigns and corporations, I've designed and built websites, donation pages, emails and print. Along the way, longtime friends and I founded Arbcentrix to give my clients the dedicated team they deserve while opening doors for talented Filipinos. I also co-founded Stratovation Partners to help organizations plan for what comes next.</p>
+<p>I care about work that is well built and well made: donation pages that load fast and convert, data you can trust, emails that render everywhere, and strategy that actually ships.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="expertise" class="wrap block">
+<div class="split">
+<p class="eyebrow">Expertise</p>
+<div class="content cols">
+<div><h3>Engaging Networks</h3><p>Accredited partner. Implementations and migrations of donation, membership, advocacy, event and peer-to-peer pages, plus branded email templates.</p></div>
+<div><h3>CRM and data</h3><p>Luminate Online, Raiser's Edge, NetForum, Revolution and Salesforce integrations, plus data cleaning and list quality.</p></div>
+<div><h3>Email and SMS</h3><p>Hand-coded HTML emails that render everywhere, retention strategy, and SMS programs on Twilio.</p></div>
+<div><h3>Front-end development</h3><p>Fast, accessible donation pages, page templates, integrations and performance audits.</p></div>
+<div><h3>Design</h3><p>Web, print and campaign design across the Adobe Creative Suite, from concept to production.</p></div>
+<div><h3>Strategy</h3><p>Digital roadmaps, AI adoption, and security practices built for SOC 2 and PCI expectations.</p></div>
+</div>
+</div>
+</section>
+
+<section id="companies" class="wrap block">
+<div class="split">
+<p class="eyebrow">Companies</p>
+<div class="content cols" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+<div class="company">
+<div class="clogo"><img src="images/logo-arbcentrix.png" alt="" style="height:76px;width:auto"></div>
+<h3>Arbcentrix</h3>
+<p>Dedicated professional teams in the Philippines that work as a true extension of U.S. organizations, built on the Philippine work ethic and rigorous process. SOC 2 accredited.</p>
+<a href="https://arbcentrix.com">arbcentrix.com →</a>
+</div>
+<div class="company">
+<div class="clogo"><img src="images/logo-stratovation.png" alt="" style="height:50px;width:auto"></div>
+<h3>Stratovation Partners</h3>
+<p>Growth and expansion strategy, AI adoption, futures design and organization design for leaders planning what comes next.</p>
+<a href="https://stratovation.digital">stratovation.digital →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="clients-h" class="wrap block">
+<div class="split">
+<h2 id="clients-h" class="eyebrow">Clients</h2>
+<ul class="content pills">
+<li>ALS Canada</li>
+<li>American Kidney Fund</li>
+<li>Andy Suth, Ph.D. and Associates</li>
+<li>Animal Rescue Fund</li>
+<li>Asian Americans Advancing Justice</li>
+<li>Berea College</li>
+<li>Campaign Legal Center</li>
+<li>Children's Aid Foundation Canada</li>
+<li>Dapple Creative</li>
+<li>DC Public Library Foundation</li>
+<li>Engaging Networks</li>
+<li>Franciscan Friars Charities</li>
+<li>Human Rights Campaign</li>
+<li>Mighty Earth</li>
+<li>Minor League Baseball</li>
+<li>National Home Rental Council</li>
+<li>Politics and Prose</li>
+<li>Reading Is Fundamental</li>
+<li>RESOLVE: The National Infertility Association</li>
+<li>Urban Land Institute</li>
+<li>Verizon Foundation</li>
+</ul>
+</div>
+</section>
+
+<section id="speaking" class="wrap block">
+<div class="split">
+<p class="eyebrow">Speaking</p>
+<div class="content">
+<p class="intro">I share what I've learned about fundraising technology, email and data with the nonprofit community at sector conferences.</p>
+<div class="talks">
+<div class="talk"><div><h3>ENCC</h3><p>Engaging Networks Community Conference</p></div><span class="years">Since 2020</span></div>
+<div class="talk"><div><h3>NTEN</h3><p>Nonprofit Technology Conference</p></div><span class="years">2022, 2023, 2024</span></div>
+<div class="talk"><div><h3>Bridge</h3><p>Bridge to Integrated Marketing and Fundraising Conference</p></div><span class="years">2023, 2024, 2025</span></div>
+</div>
+<div class="more"><a href="#contact" class="gold">Invite me to speak →</a><a href="https://www.linkedin.com/in/maansacdalan/">More on LinkedIn →</a></div>
+</div>
+</div>
+</section>
+
+<section id="other" class="wrap block other">
+<div class="split">
+<p class="eyebrow">Other work</p>
+<div class="content">
+<p class="kind">Documentary</p>
+<h3>I Love Filipino, Season 2</h3>
+<p class="desc">International Researcher for the Netflix documentary series, tracing the Manila-Acapulco Galleon Trade and the centuries-old ties between the Philippines and Mexico.</p>
+</div>
+</div>
+</section>
+
+<section id="contact" style="max-width:1120px;margin:0 auto">
+<div class="contact-box">
+<div>
+<h2>Let's build something that matters.</h2>
+<p>Whether you need a platform migration, a team that scales with you, a strategy partner or a speaker, I'd love to hear what you're working on.</p>
+<div class="contact-links"><a href="mailto:maan@sacdalanllc.com">maan@sacdalanllc.com</a><a href="https://www.linkedin.com/in/maansacdalan/">LinkedIn</a></div>
+</div>
+<form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
+<input type="hidden" name="form-name" value="contact">
+<p class="hidden"><label>Leave this empty <input name="company-website"></label></p>
+<div class="row">
+<label>Name<input type="text" name="name" autocomplete="name" required></label>
+<label>Email<input type="email" name="email" autocomplete="email" required></label>
+</div>
+<label>How can I help?<textarea name="message" rows="3" required></textarea></label>
+<button type="submit">Send message</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<span>© 2026 Maan Sacdalan · Washington, DC</span>
+<span><a href="https://www.linkedin.com/in/maansacdalan/">LinkedIn</a> · <a href="https://arbcentrix.com">Arbcentrix</a> · <a href="https://stratovation.digital">Stratovation Partners</a></span>
+</div>
+</footer>
+
+</body>
+</html>
