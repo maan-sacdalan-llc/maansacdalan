@@ -22,7 +22,6 @@
   "image": "https://maansacdalan.com/images/maan-sacdalan.jpg",
   "jobTitle": "Nonprofit Strategist, Designer and Technologist",
   "description": "Washington, DC based nonprofit strategist, digital designer and technologist. Co-founder of Arbcentrix and Stratovation Partners.",
-  "email": "mailto:maan@sacdalanllc.com",
   "address": {"@type": "PostalAddress", "addressLocality": "Washington", "addressRegion": "DC", "addressCountry": "US"},
   "worksFor": [
     {"@type": "Organization", "name": "Arbcentrix", "url": "https://arbcentrix.com"},
@@ -149,6 +148,8 @@ textarea{resize:vertical}
 button{align-self:flex-start;font:inherit;font-weight:600;font-size:15px;background:#2A211B;color:#fff;border:0;border-radius:999px;padding:13px 26px;cursor:pointer}
 button:hover{background:#000}
 .hidden{display:none}
+button.reveal{all:unset;cursor:pointer;color:var(--gold);font-weight:600;font-size:15px}
+button.reveal:hover,button.reveal:focus-visible{text-decoration:underline}
 
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:28px;padding-bottom:28px;font-size:13px;color:var(--soft)}
@@ -328,7 +329,7 @@ footer a{color:var(--soft);text-decoration:none}footer a:hover{color:var(--ink)}
 <div>
 <h2>Let's build something that matters.</h2>
 <p>Whether you need a platform migration, a team that scales with you, a strategy partner or a speaker, I'd love to hear what you're working on.</p>
-<div class="contact-links"><a href="mailto:maan@sacdalanllc.com">maan@sacdalanllc.com</a><a href="https://www.linkedin.com/in/maansacdalan/">LinkedIn</a></div>
+<div class="contact-links"><button type="button" class="reveal" id="email-reveal">Email me →</button><a id="email-link" class="hidden" href="#"></a><a href="https://www.linkedin.com/in/maansacdalan/">Connect on LinkedIn →</a></div>
 </div>
 <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
 <input type="hidden" name="form-name" value="contact">
@@ -351,5 +352,11 @@ footer a{color:var(--soft);text-decoration:none}footer a:hover{color:var(--ink)}
 </div>
 </footer>
 
+<script>
+document.getElementById('email-reveal').addEventListener('click',function(){
+  var a=document.getElementById('email-link'),u=['ma','an'].join(''),d=['sacdalanllc','com'].join('.'),e=u+'@'+d;
+  a.href='mailto:'+e;a.textContent=e;a.classList.remove('hidden');this.remove();a.focus();
+});
+</script>
 </body>
 </html>
