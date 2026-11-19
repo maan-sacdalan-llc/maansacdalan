@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Test page: keep it out of Google -->
+<meta name="robots" content="noindex, nofollow">
+<title>Form Test | Maan Sacdalan</title>
+
+<!-- Optional: link your site stylesheet here so the form inherits your fonts, colors and buttons -->
+<!-- <link rel="stylesheet" href="/css/styles.css"> -->
+
+<style>
+/* Minimal page shell for testing only. Remove if your site CSS is linked above. */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #2b2b2b;
+  background: #fff;
+  line-height: 1.5;
+}
+.test-wrap { padding: 3rem 1.25rem; }
+.test-wrap h1 { text-align: center; margin: 0 0 0.5rem; }
+.test-wrap .note { text-align: center; color: #666; margin: 0 0 2rem; font-size: 0.95rem; }
+.ll-en-form button[type="submit"] {
+  background: #d63384;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 600;
+}
+.ll-en-form button[type="submit"]:hover { background: #b02a6f; }
+</style>
+</head>
+<body>
+
+<main class="test-wrap">
+  <h1>Engaging Networks Form Test</h1>
+  <p class="note">Test page for the Lambda Legal sign-up form. Not linked from the site.</p>
+
+<!-- Lambda Legal / Engaging Networks sign-up form: paste this whole block into the page -->
+<style>
+/* Layout only, feel free to edit your way. Fonts, colors and buttons inherit from the site CSS. */
+.ll-en-form { max-width: 520px; margin: 0 auto; }
+.ll-en-form .field { margin-bottom: 1rem; }
+.ll-en-form .field label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+.ll-en-form input[type="text"],
+.ll-en-form input[type="email"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  border: 1px solid #c8c8c8;
+  border-radius: 4px;
+}
+.ll-en-form input:focus { outline: 2px solid currentColor; outline-offset: 1px; }
+.ll-en-form .optin { display: flex; align-items: flex-start; gap: 0.6rem; margin: 1rem 0; }
+.ll-en-form .optin input[type="checkbox"] { flex-shrink: 0; width: 1.1rem; height: 1.1rem; margin: 0.2rem 0 0; }
+.ll-en-form .optin label { font-size: 0.9rem; line-height: 1.45; }
+.ll-en-form .ll-hp { position: absolute; left: -9999px; }
+.ll-en-form button[type="submit"] { margin-top: 0.5rem; padding: 0.75rem 2rem; cursor: pointer; }
+</style>
+
+<!-- TBDSOURCECODE stays until the UTM source codes are set -->
+<form class="ll-en-form" id="ll-en-form" method="POST"
+      action="https://act.lambdalegal.org/page/1004512/data/2?ea.tracking.id=TBDSOURCECODE"
+      target="_top">
+
+  <div class="field">
+    <label for="ll-firstName">First Name</label>
+    <input type="text" id="ll-firstName" name="supporter.firstName" placeholder="First Name" autocomplete="given-name" required>
+  </div>
+
+  <div class="field">
+    <label for="ll-lastName">Last Name</label>
+    <input type="text" id="ll-lastName" name="supporter.lastName" placeholder="Last Name" autocomplete="family-name" required>
+  </div>
+
+  <div class="field">
+    <label for="ll-email">Email Address</label>
+    <input type="email" id="ll-email" name="supporter.emailAddress" placeholder="Email Address" autocomplete="email" required>
+  </div>
+
+  <!-- Main Opt In (EN question 31943) -->
+  <div class="optin">
+    <input type="checkbox" id="ll-optinEmail" name="supporter.questions.31943" value="Y" checked>
+    <label for="ll-optinEmail">Yes, I agree to receive email updates from Lambda Legal. I can unsubscribe at any time.</label>
+  </div>
+
+  <!-- Honeypot: real people leave this empty -->
+  <div class="ll-hp" aria-hidden="true">
+    <label for="ll-website">Website</label>
+    <input type="text" id="ll-website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <button type="submit">Sign Up</button>
+</form>
+
+<script>
+(function () {
+  var form = document.getElementById('ll-en-form');
+  if (!form) return;
+  var honeypot = form.querySelector('#ll-website');
+  // Block submissions where the honeypot is filled in
+  form.addEventListener('submit', function (e) {
+    if (honeypot.value !== '') e.preventDefault();
+  });
+})();
+</script>
+<!-- End Lambda Legal / Engaging Networks sign-up form -->
+
+</main>
+</body>
+</html>
