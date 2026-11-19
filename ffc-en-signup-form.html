@@ -1,0 +1,122 @@
+<!-- FFC / Engaging Networks sign-up form: paste this whole block into the page -->
+<style>
+  /* Layout only. Fonts, colors and buttons inherit from the site CSS. */
+  .ffc-en-form { max-width: 520px; margin: 0 auto; }
+  .ffc-en-form .field { margin-bottom: 1rem; }
+  .ffc-en-form .field label { display: block; margin-bottom: 0.35rem; font-weight: 600; }
+  .ffc-en-form input[type="text"],
+  .ffc-en-form input[type="email"],
+  .ffc-en-form input[type="tel"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+  }
+  .ffc-en-form input:focus { outline: 2px solid currentColor; outline-offset: 1px; }
+  .ffc-en-form .optin {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .ffc-en-form .optin input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.2rem 0 0;
+  }
+  .ffc-en-form .optin label { font-size: 0.9rem; line-height: 1.45; }
+  .ffc-en-form .optin a { text-decoration: underline; }
+  .ffc-en-form .ffc-hp { position: absolute; left: -9999px; }
+  .ffc-en-form button[type="submit"] { margin-top: 0.5rem; padding: 0.75rem 2rem; cursor: pointer; }
+  .ffc-en-form button[disabled] { opacity: 0.6; cursor: default; }
+</style>
+
+<!-- Replace TBDSOURCECODE with the source code for this placement -->
+<form class="ffc-en-form" id="ffc-en-form" method="POST" action="https://join.franciscanfriarscharities.org/page/205146/subscribe/2?ea.tracking.id=TBDSOURCECODE" target="_top">
+
+  <div class="field">
+    <label for="ffc-firstName">First Name</label>
+    <input type="text" id="ffc-firstName" name="supporter.firstName" placeholder="First Name" autocomplete="given-name" required>
+  </div>
+
+  <div class="field">
+    <label for="ffc-lastName">Last Name</label>
+    <input type="text" id="ffc-lastName" name="supporter.lastName" placeholder="Last Name" autocomplete="family-name" required>
+  </div>
+
+  <div class="field">
+    <label for="ffc-email">Email Address</label>
+    <input type="email" id="ffc-email" name="supporter.emailAddress" placeholder="Email Address" autocomplete="email" required>
+  </div>
+
+  <div class="field">
+    <label for="ffc-phone">Phone Number (optional)</label>
+    <!-- Check on the EN page: supporter.phoneNumber2 vs supporter.phoneNumber -->
+    <input type="tel" id="ffc-phone" name="supporter.phoneNumber2" placeholder="000-000-0000 (Optional)" autocomplete="tel" inputmode="tel">
+  </div>
+
+  <!-- Opt-ins -->
+  <div class="optin">
+    <input type="checkbox" id="ffc-optinEmail" name="supporter.questions.1702409" value="Y" checked>
+    <label for="ffc-optinEmail">I would like to receive news and updates from the Franciscan Friars Charities.</label>
+  </div>
+
+  <div class="optin">
+    <input type="checkbox" id="ffc-optinSms" name="supporter.questions.2512495" value="Y">
+    <!-- Must match the live EN label and your Twilio A2P opt-in wording exactly. Replace the two # links. -->
+    <label for="ffc-optinSms">Yes, I agree to receive recurring marketing text messages from Franciscan Friars Charities. Consent is not a condition of donation. Message frequency varies. Message and data rates may apply. Reply STOP to opt out or HELP for help. See our <a href="#TERMS-URL" target="_blank" rel="noopener">Terms</a> and <a href="#PRIVACY-URL" target="_blank" rel="noopener">Privacy Policy</a>.</label>
+  </div>
+
+  <!-- Timezone offset: default Eastern, the script below sets it from the visitor's browser -->
+  <input type="hidden" name="supporter.sendOffset" value="-05:00">
+
+  <!-- Honeypot: real people leave this empty -->
+  <div class="ffc-hp" aria-hidden="true">
+    <label for="ffc-website">Website</label>
+    <input type="text" id="ffc-website" name="website" tabindex="-1" autocomplete="off">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+(function () {
+  var form = document.getElementById('ffc-en-form');
+  if (!form) return;
+  var phone = form.querySelector('#ffc-phone');
+  var phoneLabel = form.querySelector('label[for="ffc-phone"]');
+  var smsOptin = form.querySelector('#ffc-optinSms');
+  var honeypot = form.querySelector('#ffc-website');
+  var offset = form.querySelector('input[name="supporter.sendOffset"]');
+  var button = form.querySelector('button[type="submit"]');
+
+  // Timezone offset from the visitor's browser (handles daylight time)
+  if (offset) {
+    var mins = -new Date().getTimezoneOffset();
+    var sign = mins >= 0 ? '+' : '-';
+    mins = Math.abs(mins);
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    offset.value = sign + pad(Math.floor(mins / 60)) + ':' + pad(mins % 60);
+  }
+
+  // Phone becomes required when the text message opt-in is checked
+  function syncPhoneRequired() {
+    phone.required = smsOptin.checked;
+    phoneLabel.textContent = smsOptin.checked ? 'Phone Number' : 'Phone Number (optional)';
+    phone.placeholder = smsOptin.checked ? '000-000-0000' : '000-000-0000 (Optional)';
+  }
+  smsOptin.addEventListener('change', syncPhoneRequired);
+  syncPhoneRequired();
+
+  form.addEventListener('submit', function (e) {
+    // Block submissions where the honeypot is filled in
+    if (honeypot.value !== '') { e.preventDefault(); return; }
+    // Prevent double submits
+    button.disabled = true;
+    button.textContent = 'Submitting...';
+  });
+})();
+</script>
